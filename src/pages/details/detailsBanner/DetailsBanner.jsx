@@ -11,12 +11,12 @@ import Genres from "../../../components/genres/Genres";
 import CircleRating from "../../../components/circleRating/CircleRating";
 import Img from "../../../components/lazyLoadImg/Img";
 import PosterFallback from "../../../assets/no-poster.png";
-import {PlayIcon} from '../detailsBanner/Playbtn'
+import { PlayIcon } from '../detailsBanner/Playbtn'
 
 const DetailsBanner = ({ video, crew }) => {
 
-    const {mediaType,id} = useParams();
-    const {data,loading} = useFetch(`/${mediaType}/${id}`)
+    const { mediaType, id } = useParams();
+    const { data, loading } = useFetch(`/${mediaType}/${id}`)
 
     const toHoursAndMinutes = (totalMinutes) => {
         const hours = Math.floor(totalMinutes / 60);
@@ -24,7 +24,7 @@ const DetailsBanner = ({ video, crew }) => {
         return `${hours}h${minutes > 0 ? ` ${minutes}m` : ""}`;
     };
 
-    const {url} = useSelector((state) => state.home)
+    const { url } = useSelector((state) => state.home)
 
     const _genres = data?.genres?.map((g) => g.id);
 
@@ -40,14 +40,14 @@ const DetailsBanner = ({ video, crew }) => {
                         <React.Fragment>
                             <div>
                                 <div className="backdrop-img">
-                                    <Img src={url.backdrop + data?.backdrop_path}/>
+                                    <Img src={url.backdrop + data?.backdrop_path} />
                                 </div>
                             </div>
                             <div className="opacity-layer"></div>
                             <ContentWrapper>
                                 <div className="content">
                                     <div className="left">
-                                        {data.poster_path ? (<Img className="posterImg" src={url.backdrop + data.poster_path}/>) : (<Img className="posterImg" src={PosterFallback}/>)}
+                                        {data.poster_path ? (<Img className="posterImg" src={url.backdrop + data.poster_path} />) : (<Img className="posterImg" src={PosterFallback} />)}
                                     </div>
                                     <div className="right">
                                         <div className="title">
@@ -56,10 +56,10 @@ const DetailsBanner = ({ video, crew }) => {
                                         <div className="subtitle">
                                             {data.tagline}
                                         </div>
-                                        <Genres data={_genres}/>
+                                        <Genres data={_genres} />
 
                                         <div className="row">
-                                            <CircleRating rating= {data.vote_average.toFixed(1)}/>
+                                            <CircleRating rating={data.vote_average.toFixed(1)} />
                                             <div className="playbtn">
                                                 <PlayIcon />
                                                 <span className="text">Watch Trailer</span>
@@ -74,7 +74,7 @@ const DetailsBanner = ({ video, crew }) => {
                                             </div>
                                         </div>
                                         <div className="info">
-                                        {data.status && (
+                                            {data.status && (
                                                 <div className="infoItem">
                                                     <span className="text bold">
                                                         Status:{" "}
@@ -111,10 +111,10 @@ const DetailsBanner = ({ video, crew }) => {
                                                     Director:{" "}
                                                 </span>
                                                 <span className="text">
-                                                    {director?.map((d,i) => (
+                                                    {director?.map((d, i) => (
                                                         <span key={i}>
                                                             {d.name}
-                                                            {director.length - 1 !== i && ", "} 
+                                                            {director.length - 1 !== i && ", "}
                                                         </span>
                                                     ))}
                                                 </span>
@@ -126,10 +126,10 @@ const DetailsBanner = ({ video, crew }) => {
                                                     Writer:{" "}
                                                 </span>
                                                 <span className="text">
-                                                    {writer?.map((d,i) => (
+                                                    {writer?.map((d, i) => (
                                                         <span key={i}>
                                                             {d.name}
-                                                            {writer.length - 1 !== i && ", "} 
+                                                            {writer.length - 1 !== i && ", "}
                                                         </span>
                                                     ))}
                                                 </span>
