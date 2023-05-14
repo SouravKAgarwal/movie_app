@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import './style.scss';
+import React, { useState } from "react";
 
-const SwitchTabs = ({data, onTabChange}) => {
+import "./style.scss";
+
+const SwitchTabs = ({ data, onTabChange }) => {
     const [selectedTab, setSelectedTab] = useState(0);
     const [left, setLeft] = useState(0);
 
@@ -11,23 +12,26 @@ const SwitchTabs = ({data, onTabChange}) => {
             setSelectedTab(index);
         }, 300);
         onTabChange(tab, index);
-    }
+    };
 
     return (
         <div className="switchingTabs">
             <div className="tabItems">
-                {data?.map((tab, index) => (
+                {data.map((tab, index) => (
                     <span
                         key={index}
-                        className={`tabItem ${selectedTab === index ? "active" : ""}`}
-                        onClick={() => activeTab(tab, index)}>
+                        className={`tabItem ${
+                            selectedTab === index ? "active" : ""
+                        }`}
+                        onClick={() => activeTab(tab, index)}
+                    >
                         {tab}
                     </span>
                 ))}
                 <span className="movingBg" style={{ left }} />
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default SwitchTabs
+export default SwitchTabs;

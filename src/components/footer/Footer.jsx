@@ -43,8 +43,8 @@ const Footer = () => {
                         <FaLinkedin />
                     </span>
                 </div>
-                <ul className="menuCopyrightItems">
-                    <li className="menuCopyrightItem">&copy; 2023| Sourav Kumar Agarwal</li>
+                <ul className="footerCopyrightItems">
+                    <li className="footerCopyrightItem">&copy; 2023 | Sourav Kumar Agarwal</li>
                 </ul>
             </ContentWrapper>
         </footer>
