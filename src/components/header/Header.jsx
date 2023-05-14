@@ -8,6 +8,7 @@ import "./style.scss";
 
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import logo from "../../assets/movix-logo.svg";
+import SearchResult from "../../pages/searchResult/SearchResult";
 
 const Header = () => {
     const [show, setShow] = useState("top");
