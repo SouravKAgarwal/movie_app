@@ -90,7 +90,7 @@ const Header = () => {
                 </ul>
 
                 <div className="mobileMenuItems">
-                    <HiOutlineSearch onClick={openSearch}/>
+                    <HiOutlineSearch onClick={openSearch} onKeyUp={searchQueryHandler}/>
                     {mobileMenu ? (<VscChromeClose onClick={() => setMobileMenu(false)} />) : (<SlMenu onClick={openMobileMenu} />)}
                 </div>
             </ContentWrapper>
