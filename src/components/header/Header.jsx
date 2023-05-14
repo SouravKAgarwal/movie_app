@@ -8,7 +8,6 @@ import "./style.scss";
 
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import logo from "../../assets/movix-logo.svg";
-import SearchResult from "../../pages/searchResult/SearchResult";
 
 const Header = () => {
     const [show, setShow] = useState("top");
@@ -90,7 +89,7 @@ const Header = () => {
                 </ul>
 
                 <div className="mobileMenuItems">
-                    <HiOutlineSearch onClick={openSearch} onKeyUp={searchQueryHandler}/>
+                    <HiOutlineSearch onClick={openSearch}/>
                     {mobileMenu ? (<VscChromeClose onClick={() => setMobileMenu(false)} />) : (<SlMenu onClick={openMobileMenu} />)}
                 </div>
             </ContentWrapper>

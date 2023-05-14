@@ -43,16 +43,16 @@ const DetailsBanner = ({ video, crew }) => {
           {!!data && (
             <React.Fragment>
               <div className="backdrop-img">
-                <Img src={url.backdrop + data.backdrop_path} />
+                <Img src={url.backdrop + data?.backdrop_path} />
               </div>
               <div className="opacity-layer"></div>
               <ContentWrapper>
                 <div className="content">
                   <div className="left">
-                    {data.poster_path ? (
+                    {data?.poster_path ? (
                       <Img
                         className="posterImg"
-                        src={url.backdrop + data.poster_path}
+                        src={url.backdrop + data?.poster_path}
                       />
                     ) : (
                       <Img className="posterImg" src={PosterFallback} />
@@ -60,16 +60,16 @@ const DetailsBanner = ({ video, crew }) => {
                   </div>
                   <div className="right">
                     <div className="title">
-                      {`${data.name || data.title} (${dayjs(
+                      {`${data?.name || data?.title} (${dayjs(
                         data?.release_date
                       ).format("YYYY")})`}
                     </div>
-                    <div className="subtitle">{data.tagline}</div>
+                    <div className="subtitle">{data?.tagline}</div>
 
                     <Genres data={_genres} />
 
                     <div className="row">
-                      <CircleRating rating={data.vote_average.toFixed(1)} />
+                      <CircleRating rating={data?.vote_average.toFixed(1)} />
                       <div
                         className="playbtn"
                         onClick={() => {
@@ -84,29 +84,29 @@ const DetailsBanner = ({ video, crew }) => {
 
                     <div className="overview">
                       <div className="heading">Overview</div>
-                      <div className="description">{data.overview}</div>
+                      <div className="description">{data?.overview}</div>
                     </div>
 
                     <div className="info">
-                      {data.status && (
+                      {data?.status && (
                         <div className="infoItem">
                           <span className="text bold">Status: </span>
-                          <span className="text">{data.status}</span>
+                          <span className="text">{data?.status}</span>
                         </div>
                       )}
-                      {data.release_date && (
+                      {data?.release_date && (
                         <div className="infoItem">
                           <span className="text bold">Release Date: </span>
                           <span className="text">
-                            {dayjs(data.release_date).format("MMM D, YYYY")}
+                            {dayjs(data?.release_date).format("MMM D, YYYY")}
                           </span>
                         </div>
                       )}
-                      {data.runtime && (
+                      {data?.runtime && (
                         <div className="infoItem">
                           <span className="text bold">Runtime: </span>
                           <span className="text">
-                            {toHoursAndMinutes(data.runtime)}
+                            {toHoursAndMinutes(data?.runtime)}
                           </span>
                         </div>
                       )}
