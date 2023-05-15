@@ -35,7 +35,7 @@ const Footer = () => {
                     <Link href="https://github.com/SouravKAgarwal" target='_blank'><FaGithub className='text-[white] text-[24px]'/></Link>
                     </span>
                     <span className="icon">
-                    <Link href="https://www.linkedin.com/in/sourav-kumar-agarwal09/" target='_blank'><FaLinkedinIn className='text-blue-600 text-[24px]'/></Link>                       
+                    <Link href="https://www.linkedin.com/in/sourav-kumar-agarwal09/" target='_blank'><FaLinkedin className='text-blue-600 text-[24px]'/></Link>                       
                     </span>
                     <span className="icon">
                     <Link href="https://instagram.com/_souravagarwal_09?igshid=Yjk4NWM2ZWVkMw==" target='_blank'><FaInstagram className='text-pink-600 text-[24px]'/></Link>
